@@ -1,3 +1,3 @@
-# tau-themes
+# tau-starship
 
-A set of GTK Themes for tauOS
+tauOS Configuration for the Starship shell prompt
