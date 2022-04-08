@@ -1,0 +1,20 @@
+format = """
+[│](bold green) $username@$hostname in 📂 $directory$git_branch
+[└─>](bold green) """
+
+[username]
+style_user = "bold purple"
+style_root = "bold red"
+format = "👤 [$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold yellow)"
+disabled = false
+
+[git_branch]
+symbol = "🏗️  "
+truncation_length = 4
+truncation_symbol = ""
