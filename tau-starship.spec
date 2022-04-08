@@ -12,7 +12,7 @@ BuildArch:      noarch
 Requires:       starship
 
 %description
-tauOS Configuration for the Starship shell
+tauOS Configuration for the Starship shell prompt
 
 %prep
 %setup -q
