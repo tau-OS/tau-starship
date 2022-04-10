@@ -1,5 +1,3 @@
-%define adw_version 1.6
-
 Summary:        tauOS Configuration for Starship
 Name:           tau-starship
 Version:        1.1
