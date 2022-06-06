@@ -1,7 +1,7 @@
 Summary:        tauOS Configuration for Starship
 Name:           tau-starship
 Version:        1.1
-Release:        3
+Release:        4
 License:        GPLv3
 URL:            https://tauos.co
 Source0:        README.md
@@ -34,12 +34,12 @@ install -pm 0644 %SOURCE0 README.md
 
 %post
 # Initialise starship automatically in RC files
-if [ -n "-e%{_sysconfdir}/skel/.bashrc" ]; then
-    echo '\neval "$(starship init bash)"' >> %{_sysconfdir}/skel/.bashrc
+if [ -f %{_sysconfdir}/skel/.bashrc ]; then
+    echo 'eval "$(starship init bash)"' >> %{_sysconfdir}/skel/.bashrc
 fi
 
-if [ -n "-e%{_sysconfdir}/skel/.zshrc" ]; then
-    echo '\neval "$(starship init zsh)"' >> %{_sysconfdir}/skel/.zshrc
+if [ -f %{_sysconfdir}/skel/.zshrc ]; then
+    echo 'eval "$(starship init zsh)"' >> %{_sysconfdir}/skel/.zshrc
 fi
 
 %files
@@ -49,6 +49,9 @@ fi
 %config(noreplace) %{_sysconfdir}/profile.d/starship.sh
 
 %changelog
+* Mon Jun 6 2022 Jamie Murphy <jamie@fyralabs.com> - 1.1-1.3
+- Only install init scripts if file exists
+
 * Sat Apr 23 2022 Jamie Murphy <jamie@fyralabs.com> - 1.1-1.2
 - Update CI
 
